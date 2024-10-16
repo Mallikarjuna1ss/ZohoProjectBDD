@@ -1,3 +1,4 @@
+@ZohoHomePage
 Feature: Zoho Homepage Top Menu Bar
 @skip
   Scenario: Verify top menu bar elements on the Zoho homepage

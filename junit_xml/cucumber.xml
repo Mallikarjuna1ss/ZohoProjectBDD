@@ -1,58 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="111.508" tests="8" skipped="0" failures="0" errors="0">
-<testcase classname="Zoho Homepage Top Menu Bar" name="Verify top menu bar elements on the Zoho homepage" time="14.204">
+<testsuite name="Cucumber" time="130.93" tests="9" skipped="0" failures="0" errors="0">
+<testcase classname="Zoho Homepage Top Menu Bar" name="Verify top menu bar elements on the Zoho homepage" time="14.943">
 <system-out><![CDATA[
 Given the user is on the Zoho homepage......................................passed
 Then the user checks the top menu bar.......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Zoho Homepage Top Menu Bar" name="Verify Products button functionality" time="19.359">
+<testcase classname="Zoho Homepage Top Menu Bar" name="Verify Products button functionality" time="19.022">
 <system-out><![CDATA[
 Given I am on the homepage..................................................passed
 When I click on the "Products" button.......................................passed
 Then I should see the products menu expanded................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Zoho Homepage Top Menu Bar" name="Navigate to Customers page" time="14.116">
+<testcase classname="Zoho Homepage Top Menu Bar" name="Navigate to Customers page" time="13.508">
 <system-out><![CDATA[
 Given I am on the homepage..................................................passed
 When I click on the "Customers" link........................................passed
 Then I should be navigated to the "customers.html" page.....................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Zoho Homepage Top Menu Bar" name="Verify Company dropdown functionality" time="15.93">
+<testcase classname="Zoho Homepage Top Menu Bar" name="Verify Company dropdown functionality" time="11.542">
 <system-out><![CDATA[
 Given I am on the homepage..................................................passed
 When I expand the "Company" dropdown........................................passed
 Then I should see the following options:....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Zoho Homepage Top Menu Bar" name="Verify More Links dropdown functionality" time="12.461">
+<testcase classname="Zoho Homepage Top Menu Bar" name="Verify More Links dropdown functionality" time="13.6">
 <system-out><![CDATA[
 Given I am on the homepage..................................................passed
 When I expand the "More Links" dropdown.....................................passed
 Then I should see the following options:....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Zoho Homepage Top Menu Bar" name="Verify &quot;Sign In&quot; button in the top bar" time="10.576">
+<testcase classname="Zoho Homepage Top Menu Bar" name="Verify &quot;Sign In&quot; button in the top bar" time="12.738">
 <system-out><![CDATA[
 Given I am on the homepage..................................................passed
 When I look for the "Sign In" button........................................passed
 Then the "Sign In" button should be visible.................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Zoho Homepage Top Menu Bar" name="Verify &quot;Search&quot; icon functionality" time="10.832">
+<testcase classname="Zoho Homepage Top Menu Bar" name="Verify &quot;Search&quot; icon functionality" time="14.288">
 <system-out><![CDATA[
 Given I am on the homepage..................................................passed
 When I click on the "Search" icon1..........................................passed
 Then the search bar should be displayed.....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Zoho Homepage Top Menu Bar" name="Verify &quot;Notification&quot; icon functionality" time="13.753">
+<testcase classname="Zoho Homepage Top Menu Bar" name="Verify &quot;Notification&quot; icon functionality" time="13.604">
 <system-out><![CDATA[
 Given I am on the homepage..................................................passed
 When I click on the "Notification" icon.....................................passed
 Then the notifications panel should be displayed............................passed
+]]></system-out>
+</testcase>
+<testcase classname="User Login Functionality" name="Successfully log in with valid credentials" time="14.979">
+<system-out><![CDATA[
+Given the user is on the Zoho homepage......................................passed
+And the user clicks on the Sign In button...................................passed
+And the user enters the username............................................passed
+And the user clicks on the Next button......................................passed
+And the user enters the password............................................passed
+And the user clicks on the Final Sign In button.............................passed
+Then the user should be redirected to the Zoho dashboard page...............passed
 ]]></system-out>
 </testcase>
 </testsuite>

@@ -1,8 +1,8 @@
 package StepDefinationfile;
 
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -21,14 +21,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ZohoHomePageSteps {
-	private WebDriver driver;
-	private WebDriverWait wait;
+	private static WebDriver driver;
+	private static WebDriverWait wait;
 
 	public ZohoHomePageSteps() {
 	}
 
-	@Before
-	public void setUp() {
+	@BeforeAll
+	public static void setUp() {
 		// Automatically setup the ChromeDriver
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
@@ -37,8 +37,8 @@ public class ZohoHomePageSteps {
 
 	}
 
-	@After
-	public void tearDown() {
+	@AfterAll
+	public static void tearDown() {
 		// Close the browser and clean up
 		if (driver != null) {
 			driver.quit(); // Close the browser
@@ -192,26 +192,32 @@ public class ZohoHomePageSteps {
 
 	@When("I click on the {string} icon")
 	public void i_click_on_the_icon(String iconName) {
-	    WebElement notificationIcon;
+		WebElement notificationIcon;
 
-	    if (iconName.equalsIgnoreCase("Notification")) {
-	        // Update the selector to match the actual notification icon
-	        notificationIcon = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".zgh-announcement-icon")));
-	    } else {
-	        throw new IllegalArgumentException("Icon not recognized: " + iconName);
-	    }
+		if (iconName.equalsIgnoreCase("Notification")) {
+			// Update the selector to match the actual notification icon
+			notificationIcon = wait
+					.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".zgh-announcement-icon")));
+		} else {
+			throw new IllegalArgumentException("Icon not recognized: " + iconName);
+		}
 
-	    notificationIcon.click();
-	    System.out.println("Clicked on the " + iconName + " icon.");
+		notificationIcon.click();
+		System.out.println("Clicked on the " + iconName + " icon.");
 	}
 
 	@Then("the notifications panel should be displayed")
 	public void the_notifications_panel_should_be_displayed() {
-	    // Ensure you are waiting for the panel to be visible
-	    WebElement notificationPanel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".zgh-announcement-container"))); // Update this selector as needed
+		// Ensure you are waiting for the panel to be visible
+		WebElement notificationPanel = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".zgh-announcement-container"))); // Update
+																														// this
+																														// selector
+																														// as
+																														// needed
 
-	    Assert.assertTrue("Notifications panel is not displayed", notificationPanel.isDisplayed());
-	    System.out.println("Notifications panel is displayed.");
+		Assert.assertTrue("Notifications panel is not displayed", notificationPanel.isDisplayed());
+		System.out.println("Notifications panel is displayed.");
 	}
 
 }
